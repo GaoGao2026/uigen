@@ -9,6 +9,8 @@ import { getLanguageModel } from "@/lib/provider";
 import { generationPrompt } from "@/lib/prompts/generation";
 
 export async function POST(req: Request) {
+  const key = process.env.ANTHROPIC_API_KEY;
+  console.log("API KEY prefix:", key?.slice(0, 20), "length:", key?.length);
   const {
     messages,
     files,
